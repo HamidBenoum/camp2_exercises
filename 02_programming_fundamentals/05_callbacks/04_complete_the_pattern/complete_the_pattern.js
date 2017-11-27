@@ -34,9 +34,20 @@
 // ```
 
 function pattern(size) {
-  // Your code here
+  //
+  let myStr ="";
+  for(let i = 1;i <= size; i++){
+    for(let j=0; j<i; j++){
+      myStr += i;
+    }
+    myStr +="\n";
+  }
+  return myStr.trim();
 }
 
+pattern(5);
+const result = pattern(5);
+console.log(result);
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
 module.exports = pattern;
