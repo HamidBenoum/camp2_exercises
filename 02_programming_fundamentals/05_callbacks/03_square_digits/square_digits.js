@@ -8,8 +8,21 @@
 // Note: The function accepts an integer and returns an integer
 
 function squareDigits(number) {
-  // Your code here
+  let myArray = [];
+  const myNewArray =[];
+
+  myArray = ("" + number).split("").map(function(item) {
+    return parseInt(item, 10);
+  });
+  console.log(myArray);
+
+  for ( let i = 0; i < myArray.length; i++) {
+    myNewArray.push(myArray[i] * myArray[i]);
+  }
+  return +myNewArray.join("");
 }
+
+squareDigits(123);
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
