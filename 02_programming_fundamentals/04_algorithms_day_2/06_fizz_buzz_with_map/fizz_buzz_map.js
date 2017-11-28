@@ -9,9 +9,13 @@
    YOU MUST USE array.map
 */
 
+
 function fizzBuzz(list) {
+
 
 }
 
+const resulat = fizzBuzz([1, 2, 3, 4, 5, 6]);
+console.log(fizzBuzz);
 
 module.exports = fizzBuzz;
