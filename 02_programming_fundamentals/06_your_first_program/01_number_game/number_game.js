@@ -14,10 +14,10 @@ function numberGame() {
   let hiddenValue = randomNumberBetween0and100();
   reader.question("devine un nombre : ", function(number){
     let userNumber = parseInt(number, 10);
-    if (number !== hiddenValue) {
+    if (userNumber !== hiddenValue) {
       if(number > hiddenValue ){
         console.log("Too high");
-      } else if (number < hiddenValue) {
+      } else if (userNumber < hiddenValue) {
         console.log("Too low");
       }
       numberGame();
