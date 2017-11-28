@@ -8,14 +8,24 @@
 
    YOU MUST USE array.map
 */
-
-
-function fizzBuzz(list) {
-
+function checkIfdivedby3 (number) {
+  if (number % 3 === 0 && number % 5 === 0){
+    return "FizzBuzz";
+  }else if (number % 3 === 0 ) {
+    return "Fizz";
+  }else if (number % 5 === 0 ){
+    return "Buzz";
+  }else {
+    return number;
+  }
 
 }
 
-const resulat = fizzBuzz([1, 2, 3, 4, 5, 6]);
-console.log(fizzBuzz);
+function fizzBuzz(list) {
+  return list.map(checkIfdivedby3);
+}
+
+const resulat = fizzBuzz([1, 2, 3, 4, 5, 6, 15]);
+console.log(resulat);
 
 module.exports = fizzBuzz;
