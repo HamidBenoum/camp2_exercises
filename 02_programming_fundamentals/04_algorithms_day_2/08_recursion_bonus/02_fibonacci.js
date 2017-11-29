@@ -15,8 +15,23 @@
 // even several times
 
 function fibo(n) {
-  // your code here
+  let fibArray = [];
+  if (n < 0 || n !== parseInt(n,10)) {
+    console.log("Negative number  or not a number");
+    fibArray = [];
+    return null;
+  } else {
+    fibArray[0] = 0;
+    fibArray[1] = 1;
+
+    for ( let i = 2; i <= n; i ++) {
+      fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+
+    }
+  }
+  return fibArray[n];
 }
 
+fibo(5);
 // do not remove this line, it is for tests
 module.exports = fibo;

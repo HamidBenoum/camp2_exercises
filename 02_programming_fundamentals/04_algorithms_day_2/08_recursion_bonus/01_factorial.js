@@ -9,9 +9,16 @@
 
 
 function fact(n) {
-  // your code here
+  if (n < 0 || n !== parseInt(n,10)) {
+    return null;
+  } else if(n === 1 || n === 0) {
+    return 1;
+  } else {
+    return n * fact(n-1);
+  }
 }
 
+fact(1);
 
 // do not remove this line, it is for tests
 module.exports = fact;

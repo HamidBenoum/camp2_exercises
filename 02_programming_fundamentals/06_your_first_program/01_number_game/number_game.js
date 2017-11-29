@@ -9,9 +9,12 @@ const reader = readline.createInterface({
 function randomNumberBetween0and100(){
   return Math.floor(Math.random()*100);
 }
+let hiddenValue = randomNumberBetween0and100();
+console.log(hiddenValue);
+
 
 function numberGame() {
-  let hiddenValue = randomNumberBetween0and100();
+
   reader.question("devine un nombre : ", function(number){
     let userNumber = parseInt(number, 10);
     if (userNumber !== hiddenValue) {
