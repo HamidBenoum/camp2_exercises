@@ -17,28 +17,4 @@ const promo = {year : currentYear, kind : hello};
 // a constant called `promoYear`, bound to the value of the field `year` of the object `promo`;
 const promoYear = promo.year;
 // a constant called `digits`, bound to an array from zero to nine.
-//const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const digits = [];
-
-/*
-//2. Play with arrays
-const first = digits[0];
-console.log(first);
-
-const last = digits[9];
-console.log(last);
-
-const sixt = digits[6];
-console.log(sixt);
-*/
-for (let i = 0; i < 10; i ++){
-  digits.push(i);
-}
-console.log(digits);
-
-const last = digits.length -1;
-console.log(last);
-
-const litteralDigits = ['zero', 'one', 'two', 'tree', 'four', 'five', 'six', 'height', 'nine'];
-
-const allDigits =
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];

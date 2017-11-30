@@ -3,38 +3,29 @@
  */
 
 // Rewrite your array `digits` using `push`;
+const digits = [];
+
+digits.push(0);
+digits.push(1);
+digits.push(2);
+digits.push(3);
+digits.push(4);
+digits.push(5);
+digits.push(6);
+digits.push(7);
+digits.push(8);
+digits.push(9);
 
 
 // rewrite your variable `last` using `length`;
-
+const last = digits.length - 1;
+console.log(digits[last]);
 
 // create another array called `litteralDigits` from `zero` to `nine` where each array entry is a spelled-out number;
+const litteralDigits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 
 // use `join` to create, into the variable `allDigits`, a string like this : `zero - one ...`.
 //const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const digits = [];
-
-/*
-//2. Play with arrays
-const first = digits[0];
-console.log(first);
-
-const last = digits[9];
-console.log(last);
-
-const sixt = digits[6];
-console.log(sixt);
-*/
-for (let i = 0; i < 10; i ++){
-  digits.push(i);
-}
-console.log(digits);
-
-const last = digits.length -1;
-console.log(last);
-
-const litteralDigits = ['zero', 'one', 'two', 'tree', 'four', 'five', 'six', 'height', 'nine'];
-
-const allDigits = litteralDigits.join('-');
+const allDigits = litteralDigits.join(" - ");
 console.log(allDigits);
