@@ -1,8 +1,4 @@
 // See Sparta courses for the exercise summary
-let endOflife = Math.floor((100 - 50) * Math.random() + 50);
-console.log(endOflife);
-
-
 
 
 const orangeTree = {
@@ -20,13 +16,15 @@ const orangeTree = {
     }
   },
   ageOneYear: function() {
-    this.age = this.age +1;
+    this.age = this.age + 1;
+
     //taille
     if (this.age < 10 ) {
       this.height = this.height + 25;
     } else if (this.age >= 10 && this.age < 20 ) {
       this.height = this.height + 10;
     }
+
     //production oranges
     if (this.age >= 5 && this.age < 10) {
       this.oranges = 10;
@@ -38,12 +36,18 @@ const orangeTree = {
       this.oranges = 0;
     }
     //durée de vie.
+    let endOflife = Math.floor((150 - (this.age + 50)) * Math.random() + this.age);
 
-    if (this.age >= endOflife || this.age > 100 ) {
+    console.log(`Age de l'arbre : ${endOflife} ans`);
+    console.log(`Poucentage de mort ${((endOflife - 50 ) / 50)*100} %`);
+    console.log(`valeur age ${this.age}`);
+    if (this.age > 50  || this.age > 100 ) {
       this.alive = false;
-    } else {
+      console.log("testAlive");
+    } else if (this.age >= endOflife || this.age > 100) {
       this.alive = true;
     }
+    console.log(this.alive);
     return this;
   },
   seed: function() {
@@ -51,11 +55,9 @@ const orangeTree = {
     this.age = 0;//(in year)
     this.oranges = 0;
     this.alive = true;
-  }
+  },
 
 }
 
-
-
-
+orangeTree.ageOneYear();
 module.exports = orangeTree;
