@@ -8,5 +8,5 @@
 
 
 DATE=`date +%Y-%m-%d`
-echo $DATE
+git 
 curl -X GET "https://postman-echo.com/time/valid?timestamp=${DATE}" > 05_postman_api_call.result
