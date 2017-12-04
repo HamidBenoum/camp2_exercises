@@ -24,7 +24,7 @@ function numberGame() {
         console.log("Too low");
       }
       numberGame();
-    }else {
+    } else {
       console.log("You won!");
       reader.close();
     }
