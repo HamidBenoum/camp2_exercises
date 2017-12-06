@@ -93,8 +93,22 @@ function fetchCommentsByPost (id, callback){
 };
 //publishPost(userId, title, body, callback)
 
-
-
+function publishPost(userId, title, body, callback) {
+  request (
+    {
+      url :"http://jsonplaceholder.typicode.com/posts",
+      method: "POST",
+      form :{
+        title : title,
+        body : body,
+        userId : userId
+      }
+    },
+      function(error, response, result) {
+        callback (result);
+      }
+  )
+}
 
 
 // exports
