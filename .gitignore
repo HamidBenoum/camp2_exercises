@@ -1,1 +1,4 @@
 node_modules
+echo '/*.result' >> .gitignore
+echo '/*.weather' >> .gitignore
+git add .gitignore
