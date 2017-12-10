@@ -9,10 +9,9 @@ const myOAuth = new OAuth.OAuth(
   , "1.0A", null, "HMAC-SHA1"
 );
 
-
-//1 fonction principale qui reçoit un param ( tweetId) et une fonctoion call back (ici :tweetsHumanFormated ), retourne un tableau d'objet "data", que je parse avec JSON.parse
 function fetchtwTweets(tweetId, callback) {
-  const myUrl = `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${tweetId}&count=5`;
+//  const myUrl = `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${tweetId}&count=5`;
+  const myUrl = `https://api.twitter.com/1.1/search/tweets.json?q=%23${tweetId}&count=20`;
   myOAuth.get(
     myUrl,
     process.env.TWITTER_API_TOKEN,
@@ -21,21 +20,13 @@ function fetchtwTweets(tweetId, callback) {
       if (error) {
         console.log(error);
       } else {
-        callback(JSON.parse(data));
+        const myArray = JSON.parse(data).statuses;
+        callback(myArray.map((object) => object.text));
+        //callback(JSON.parse(data));
       }
     }
   );
 }
-
-
-// Cette fonction recupere un élément de la fonction fetchtwTweets cf "callback(JSON.parse(data));""
-function tweetsHumanFormated(element, callback) {
-  const text = element.map((tweet)=> tweet.text); // text est un tableau de string
-  const mytmpElement = text.map(function(textElement) {
-    transaleFeeling(textElement); // on transmet chaque string du tableau à la fonction transaleFeeling.
-  });
-}
-
 
 
 const username = process.env.WATSON_USERNAME;
@@ -56,5 +47,5 @@ function transaleFeeling(text) {
   });
 }
 
-//j'appelle la fonction fetchtwTweets avec en parametre "Decathlon" et la fonction "tweetsHumanFormated"
-fetchtwTweets("Decathlon", tweetsHumanFormated);
+
+fetchtwTweets("decathlon",transaleFeeling);
