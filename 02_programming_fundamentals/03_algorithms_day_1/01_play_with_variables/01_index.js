@@ -1,7 +1,7 @@
 
 //1. Play with variables
 // a constant called `hello`, bound to a string: "Sparta";
-const hello = 'Sparta';
+const hello = "Sparta";
 // a constant called `currentYear`, bound to an integer: 2017;
 const currentYear = 2017;
 // a constant called `foo`, bound to an integer: 12;
