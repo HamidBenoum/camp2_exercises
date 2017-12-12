@@ -3,3 +3,4 @@ echo '/*.result' >> .gitignore
 echo '/*.weather' >> .gitignore
 git add .gitignore
 .var_env_values
+toto.js
