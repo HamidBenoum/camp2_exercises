@@ -1,13 +1,50 @@
 const express = require("express");
+const pg = require("pg");
+const myFonctions = require("./api_fetchfunctions");
+
+
 const app = express();
 
-const request = require("request");
 
 const port = process.env.PORT || 3000;
 
 
 app.get("/categories", function(req, res) {
-  console.log(res);
+  myFonctions.getInformationsfromDb("categories");
+});
+
+app.get("/brands", function(req, res) {
+  const client = new pg.Client();
+  client.connect();
+
+  client.query(
+    "SELECT * FROM brands",
+    function(error, result) {
+      if (error) {
+        console.warn(error);
+      } else {
+        res.send(result);
+      }
+      client.end();
+    }
+  );
+});
+
+app.get("/products", function(req, res) {
+  const client = new pg.Client();
+  client.connect();
+
+  client.query(
+    "SELECT * FROM products",
+    function(error, result) {
+      if (error) {
+        console.warn(error);
+      } else {
+        res.send(result);
+      }
+      client.end();
+    }
+  );
 });
 
 app.listen(port, function () {

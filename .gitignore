@@ -4,3 +4,11 @@ echo '/*.weather' >> .gitignore
 git add .gitignore
 .var_env_values
 toto.js
+../01_HTTP/02_curl_get/01_postman_api_call.result
+../01_HTTP/02_curl_get/02_postman_api_call.result
+../01_HTTP/02_curl_get/03_postman_api_call.result
+../01_HTTP/02_curl_get/04_postman_api_call.result
+../01_HTTP/02_curl_get/05_postman_api_call.result
+../01_HTTP/03_curl_post/01_postman_api_post.result
+../01_HTTP/03_curl_post/02_postman_api_post.result
+../01_HTTP/03_curl_post/03_postman_api_post.result

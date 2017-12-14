@@ -14,7 +14,8 @@ function fetchressources(url, callback) {
   }, function (error, response, apiresult) {
     const tmpArray =JSON.parse(apiresult);
     tmpArray.forEach(function(element) {
-      callback(element);
+      //callback(element);
+      console.log(element);
     }) ;
   }
   );
@@ -74,3 +75,10 @@ function insertElementsInProducts (element) {
 //fetchressources(productsUrl, insertElementsInProducts);
 //fetchressources(categoriesUrl, insertElementsInCategories);
 fetchressources(brandsUrl, insertElementsInBrands);
+
+module.exports = {
+  fetchressources : fetchressources,
+  insertElementsInBrands:insertElementsInBrands,
+  insertElementsInCategories:insertElementsInCategories,
+  insertElementsInProducts:insertElementsInProducts
+};
