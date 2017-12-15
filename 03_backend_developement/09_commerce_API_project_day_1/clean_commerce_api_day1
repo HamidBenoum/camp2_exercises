@@ -1,0 +1,27 @@
+const express = require("express");
+//const pg = require("pg");
+const myFonctions = require("./api_fetchfunctions");
+
+
+const app = express();
+
+
+const port = process.env.PORT || 3000;
+
+
+app.get("/categories", function(req, res) {
+  myFonctions.getInformationsfromDb("categories");
+});
+
+app.get("/brands", function(req, res) {
+  const queryResult = myFonctions.getInformationsfromDb("brands");
+  console.log(queryResult);
+});
+
+app.get("/products", function(req, res) {
+  myFonctions.getInformationsfromDb("products");
+});
+
+app.listen(port, function () {
+  console.log("Server listening on port:" + port);
+});

@@ -1,6 +1,6 @@
 const express = require("express");
 const pg = require("pg");
-const myFonctions = require("./api_fetchfunctions");
+const request = require("request");
 
 
 const app = express();
@@ -8,9 +8,58 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
+/*
+"/categories" -> return all categories
+"/brands" -> return all brands
+"/products" -> return all products
+
+
+"/categories/:id" -> return a specific category
+"/brands/:id" -> return a specific brand
+"/products/:id" -> return a specific product
+
+"/categories/:id/products" -> return all products from a specific category
+link :
+https://decath-product-api.herokuapp.com/categories/d0d6a6d4-8e0a-44f9-a2d3-8e3297e3c9f1/products
+*/
+
+
 
 app.get("/categories", function(req, res) {
-  myFonctions.getInformationsfromDb("categories");
+  const client = new pg.Client();
+  client.connect();
+
+  client.query(
+    "SELECT * FROM categories",
+    function(error, result) {
+      if (error) {
+        console.warn(error);
+      } else {
+        res.json(result.rows);
+      }
+      client.end();
+    }
+  );
+
+});
+
+app.get("/categories/:categorieId", function(req, res) {
+  const client = new pg.Client();
+  client.connect();
+
+  client.query(
+    "SELECT * FROM categories where id = $1::UUID",
+    [req.params.categorieId],
+    function(error, result) {
+      if (error) {
+        console.warn(error);
+      } else {
+        res.json(result.rows);
+      }
+      client.end();
+    }
+  );
+
 });
 
 app.get("/brands", function(req, res) {
@@ -23,7 +72,26 @@ app.get("/brands", function(req, res) {
       if (error) {
         console.warn(error);
       } else {
-        res.send(result);
+        res.json(result.rows);
+      }
+      client.end();
+    }
+  );
+
+});
+
+app.get("/brands/:brandId", function(req, res) {
+  const client = new pg.Client();
+  client.connect();
+
+  client.query(
+    "SELECT * FROM brands where id = $1::UUID",
+    [req.params.brandId],
+    function(error, result) {
+      if (error) {
+        console.warn(error);
+      } else {
+        res.json(result.rows);
       }
       client.end();
     }
@@ -40,12 +108,41 @@ app.get("/products", function(req, res) {
       if (error) {
         console.warn(error);
       } else {
-        res.send(result);
+        res.json(result.rows);
       }
       client.end();
     }
   );
 });
+
+app.get("/products/:productId", function(req, res) {
+  const client = new pg.Client();
+  client.connect();
+
+  client.query(
+    "SELECT * FROM products where id = $1::UUID",
+    [req.params.productId],
+    function(error, result) {
+      if (error) {
+        console.warn(error);
+      } else {
+        res.json(result.rows);
+      }
+      client.end();
+    }
+  );
+});
+
+app.get("/categories/:id/products", function(req, res){
+  //"/categories/:id/products" -> return all products from a specific category
+
+});
+
+
+
+//----------------------------------------
+
+
 
 app.listen(port, function () {
   console.log("Server listening on port:" + port);
