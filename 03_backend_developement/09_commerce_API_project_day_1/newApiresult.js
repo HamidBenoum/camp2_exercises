@@ -36,6 +36,7 @@ function fetchDataParcategorie(catId) {
   myNewUrl = `https://decath-product-api.herokuapp.com/categories/${catId}/products`;
   //console.log(myNewUrl);
 
+
   request({
     url :myNewUrl,
     method : "GET",
