@@ -92,6 +92,6 @@ function delayInsertData(){
 }
 
 //delayInsertData();
-//fetchDataParcategorie("5f8fd5f6-a4a3-444d-91e9-6c8483318b64");
-idFromCategories(fetchDataParcategorie);
+fetchDataParcategorie("5f8fd5f6-a4a3-444d-91e9-6c8483318b64");
+//idFromCategories(fetchDataParcategorie);
 //5f8fd5f6-a4a3-444d-91e9-6c8483318b64

@@ -25,7 +25,7 @@ function fetchressources(url, callback) {
 function insertElementsInBrands (element) {
   pool.query(
 
-    "INSERT INTO brands VALUES ($1::UUID, $2::VARCHAR(255))",
+    "INSERT INTO new_productsbycategories VALUES ($1::UUID, $2::VARCHAR(255))",
     [element.id, element.title ],
 
     function(error, result) {
