@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css" />
+  <title>My resume</title>
+</head>
+<body>
+
+<!-- menu section -->
+  <div class="monmenu">
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">My skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+<!-- about section -->
+<div id="about">
+  <div id="container">
+    <img class="img-circle" src="./hamid.jpeg" alt="hamid_pic"/>
+  </div>
+  <div class="intro">
+    <H2> Almost a great junior developer</H2>
+    <p>
+      It is possible to have a licorne with emoticone!
+    </p>
+  </div>
+</div>
+<div class="spacer"></div>
+<!-- skills section -->
+<div id="skills">
+  <h1>SKILLS</h1>
+    <div class=block1>
+      <table>
+         <tr>
+            <td style="background-color:#f00; height: 10px; width: 160px;"></td>
+            <td style="background-color:#555;"> HTML 20 %</td>
+         </tr>
+      </table>
+      <table >
+         <tr>
+            <td style="background-color:#f00; height: 10px; width: 70px;"></td>
+            <td style="background-color:#555;"> CSS 10%</td>
+         </tr>
+      </table>
+      <table>
+         <tr>
+            <td style="background-color:#f00; height: 10px; width: 60px;"></td>
+            <td style="background-color:#555;"> JS 10%</td>
+         </tr>
+      </table>
+    </div>
+    <div class=block2>
+      <table>
+         <tr>
+            <td style="background-color:#f00; height: 10px; width: 160px;"></td>
+            <td style="background-color:#555;"> SQL 20 %</td>
+         </tr>
+      </table>
+      <table>
+         <tr>
+            <td style="background-color:#f00; height: 10px; width: 70px;"></td>
+            <td style="background-color:#555;"> ALGO 10%</td>
+         </tr>
+      </table>
+      <table>
+         <tr>
+            <td style="background-color:#f00; height: 10px; width: 50px;"></td>
+            <td style="background-color:#555;"> CAFE 10%</td>
+         </tr>
+      </table>
+    </div>
+</div>
+<!-- contact -->
+<div id="contact">
+  <div class="Whitespacer"></div>
+  <h1>Contactez moi !</h1>
+  <form action="/ma-page-de-traitement" method="post">
+    <div>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" />
+    </div>
+    <div>
+        <label for="courriel">Courriel :</label>
+        <input type="email" id="courriel" />
+    </div>
+    <div>
+        <label for="message">Message :</label>
+        <textarea id="message"></textarea>
+    </div>
+
+    <div class="button">
+        <button type="submit">Envoyer votre message</button>
+    </div>
+</form>
+</div>
+
+<div class="footer">
+  <div class="adresse">
+    <p>
+      "j'abite ici"
+    </p>
+  </div>
+  <div class="carte">
+    <p>
+      Google maps
+    </p>
+  </div>
+</div>
+
+<!-- script -->
+<script type="text/javascript">
+(function() {
+
+const img = document.getElementById('container').firstChild;
+img.onload = function() {
+    if(img.height > img.width) {
+        img.height = '100%';
+        img.width = 'auto';
+    }
+};
+}());
+</script>
+
+
+</body>
+</html>

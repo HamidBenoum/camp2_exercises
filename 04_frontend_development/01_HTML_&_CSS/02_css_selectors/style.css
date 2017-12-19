@@ -1,0 +1,22 @@
+body {
+  background-color: grey;
+}
+
+tr.pair {
+  background:blue; color:white;
+}
+
+tr.impair {
+  background: green; color:red;
+}
+
+.important{
+  font-weight: bold;
+}
+.emphasis{
+  font-style: italic;
+}
+
+.important.emphasis{
+  background-color: #FF0000;
+}
