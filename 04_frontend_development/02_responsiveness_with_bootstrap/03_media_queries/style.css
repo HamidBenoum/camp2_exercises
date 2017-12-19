@@ -1,0 +1,22 @@
+
+
+
+.evolution {
+   background-image: url("./charmander.png"); height: 475px; width: 475px; border: 1px solid black;
+   background-color: tomato;
+}
+
+@media (max-width: 1200px){
+
+   .evolution{
+      background-image: url("./charizard.png");height: 475px; width: 475px; border: 1px solid black;
+      background-color: tomato;
+   };
+}
+
+@media (max-width: 800px){
+   .evolution{
+      background-image: url("./charmeleon.png");height: 475px; width: 475px; border: 1px solid black;
+      background-color: tomato;
+   };
+}
