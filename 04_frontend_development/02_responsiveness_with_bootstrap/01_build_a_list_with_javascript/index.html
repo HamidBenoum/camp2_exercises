@@ -19,7 +19,6 @@
           <h1>List of french departments</h1>
 
           <ul id="department-list" class="list-group">
-            <!-- Your list will end up here -->
           </ul>
 
         </div>
@@ -27,8 +26,13 @@
     </div>
     <script src="./departments.js"></script>
     <script>
-      // Your code here
-      // the departments are accessible in a global variable named DEPARTMENTS
+    const ul = document.getElementById('department-list');
+    DEPARTMENTS.forEach((DEPARTMENT)=> {
+        let li = document.createElement('li'),
+           content = document.createTextNode(DEPARTMENT);
+         li.appendChild(content);
+         ul.appendChild(li);
+    });
     </script>
   </body>
 </html>

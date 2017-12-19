@@ -102,16 +102,6 @@ const DEPARTMENTS = [
   "RÉUNION"
 ];
 
-// selects the div with an id of placeholder
-const ul = document.getElementById('department-list');
-// loop through the fruits array
-
-DEPARTMENTS.forEach((DEPARTMENT)=> {
-   	let li = document.createElement('li'),
-   		 content = document.createTextNode(DEPARTMENT);
-     li.appendChild(content);
-     ul.appendChild(li);
-});
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = DEPARTMENTS;
