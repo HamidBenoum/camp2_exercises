@@ -43,16 +43,18 @@
       <form class="form-inline my-2 my-lg-0 mx-auto">
         <input class="form-control mr-sm-2" type="text" placeholder="Search your city" aria-label="Search" id="searchCity">
         <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-      </form>>
+      </form>
     </nav>
-  <!-- navbar -->
   </div>
-    <div class="card">
-      <img src="rainny.jpeg" class="rounded" alt="${jsonresponse}">
+  <!-- navbar -->
+  <div class="row">
+    <div class="card rounded mx-auto" style="40rem;">
+      <img src="${jsonresponse}.jpeg" class="rounded" alt="${jsonresponse}">
       <div class="card-body">
-        <p class="card-text"></p>
+        <p class="card-text text-center"> Ville : ${request.params.id}</p>
       </div>
     </div>
+  </div>
 </div>
 
 

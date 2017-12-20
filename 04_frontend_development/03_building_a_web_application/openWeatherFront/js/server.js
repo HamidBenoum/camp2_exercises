@@ -1,6 +1,5 @@
 const express = require("express");
 const fetch = require("node-fetch");
-const weatherByCity = require("./OpenWeatherByCity");
 const app = express();
 const path = require('path');
 
@@ -10,12 +9,14 @@ const API_KEY = process.env.OPENWEATHER_FORCAST_API_KEY;
 
 app.use(express.static('./'));
 app.get("/:id", function (request, result) {
-
+    console.log("TOTO", request.params);
     return fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${request.params.id}&APPID=${API_KEY}`,{method: "GET"})
       .then((response) => response.json())
-      .then((jsonresponse) => jsonresponse.weather[0].main )
+      .then((jsonresponse) => {
+        console.log(jsonresponse);
+        return jsonresponse.weather[0].main;
+      })
       .then(function(jsonresponse) {
-        let weather = jsonresponse;
           result.send(`<!DOCTYPE html>
           <html lang="en">
           <head>
@@ -57,7 +58,7 @@ app.get("/:id", function (request, result) {
           </body>
           </html>`);
 
-        console.log(weather);
+        console.log(jsonresponse);
         //const result = (`${request.params.id}, Temperateur : ${jsonresponse.temp} °`);
         //console.log(result);
 
