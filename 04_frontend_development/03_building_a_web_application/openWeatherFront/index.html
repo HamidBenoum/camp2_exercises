@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles.css">
+
+
+  <title>My nav bar</title>
+</head>
+<body>
+<!-- navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+    <form class="form-inline my-2 my-lg-0 mx-auto">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search your city" aria-label="Search" id="searchCity">
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<!-- navbar -->
+<div class="text-center">
+  <p>
+
+    Nothing to display !
+
+  </p>
+</div>
+
+
+<script type="text/javascript">
+const myInput = document.querySelector("#searchCity");
+  myInput.addEventListener("input", function() {
+    weatherByCity(this.value);
+  console.log(this.value);
+ });
+
+</script>
+
+<script src="https://use.fontawesome.com/443e1c4c2a.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</body>
+</html>
