@@ -9,11 +9,9 @@ const API_KEY = process.env.OPENWEATHER_FORCAST_API_KEY;
 
 app.use(express.static('./'));
 app.get("/:id", function (request, result) {
-    console.log("TOTO", request.params);
     return fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${request.params.id}&APPID=${API_KEY}`,{method: "GET"})
       .then((response) => response.json())
       .then((jsonresponse) => {
-        console.log(jsonresponse);
         return jsonresponse.weather[0].main;
       })
       .then(function(jsonresponse) {
@@ -57,11 +55,6 @@ app.get("/:id", function (request, result) {
               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
           </body>
           </html>`);
-
-        console.log(jsonresponse);
-        //const result = (`${request.params.id}, Temperateur : ${jsonresponse.temp} °`);
-        //console.log(result);
-
       })
       .catch((error) => {
         console.warn("Ceci est une erreur : ", error);
