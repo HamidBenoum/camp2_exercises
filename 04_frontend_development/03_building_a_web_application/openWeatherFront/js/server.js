@@ -12,6 +12,7 @@ app.get("/:id", function (request, result) {
     return fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${request.params.id}&APPID=${API_KEY}`,{method: "GET"})
       .then((response) => response.json())
       .then((jsonresponse) => {
+        console.log(jsonresponse.weather[0].icon);
         return jsonresponse.weather[0].main;
       })
       .then(function(jsonresponse) {
@@ -42,7 +43,8 @@ app.get("/:id", function (request, result) {
                 <!-- navbar -->
                 <div class="row">
                   <div class="card rounded mx-auto" style="40rem;">
-                    <img src="${jsonresponse}.jpeg" class="rounded" alt="${jsonresponse}">
+                    <!--  <img src="${jsonresponse}.jpeg" class="rounded" alt="${jsonresponse}"> -->
+                    <img src="http://openweathermap.org/img/w/${jsonresponse.weather[0].icon}.png" class="rounded" alt="${jsonresponse}">
                     <div class="card-body">
                       <p class="card-text text-center"> Ville : ${request.params.id}</p>
                     </div>
