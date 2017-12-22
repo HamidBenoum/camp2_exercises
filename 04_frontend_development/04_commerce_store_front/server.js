@@ -46,3 +46,17 @@ app.get("/products/:id", function (request, result){
 app.listen(port, function () {
   console.log("Server listening on port:" + port);
 });
+
+//https://aqueous-caverns-64243.herokuapp.com/
+
+/*
+
+echo "# decathproductapp" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:HamidBenoum/decathproductapp.git
+git push -u origin master
+
+
+*/
