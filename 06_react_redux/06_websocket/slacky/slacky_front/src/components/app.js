@@ -42,7 +42,11 @@ constructor(props) {
     return (
       <div className="App">
         <div className="container">
-                <Connexion/>
+                <Connexion
+                  username :
+
+
+                  />
         </div>
       </div>
     );
