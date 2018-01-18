@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import Login from "./Login";
-import Chat from "./Chat";
+import {ConnectedLogin} from "./components/LoginRedux";
+import Chat from "./components/ChatRedux";
+import Store from "./components/store";
 
 class App extends Component {
   constructor(props) {
@@ -53,13 +54,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Slacky</h1>
+          <h1 className="App-title">Slacky Redux</h1>
         </header>
 
         {this.state.userName ? (
           <Chat sendMessage={this.sendMessage} messages={this.state.messages} />
         ) : (
-          <Login handleUserName={this.handleUserName} />
+          <ConnectedLogin />
         )}
       </div>
     );

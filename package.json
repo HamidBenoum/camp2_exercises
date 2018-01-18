@@ -20,7 +20,9 @@
     "nunjucks": "^3.0.1",
     "pg": "^7.4.0",
     "phoenix-channels": "^1.0.0",
+    "react-redux": "^5.0.6",
     "react-test-renderer": "^16.2.0",
+    "redux": "^3.7.2",
     "request": "^2.83.0"
   },
   "devDependencies": {

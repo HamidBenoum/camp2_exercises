@@ -15,11 +15,12 @@ wss.on("connection", function connection(ws, req) {
     const message = JSON.parse(data);
     switch (message.type) {
       case "LOGIN":
-        wss.clients.forEach((client) => {
-          if (client.readyState === WebSocket.OPEN) {
-            client.send(JSON.stringify({ type: "MESSAGES", data: messages}));
-          }
-        });
+        // wss.clients.forEach((client) => {
+        //   if (client.readyState === WebSocket.OPEN) {
+        //ws.send car seul la personne qui se log a besoin de recevoir tous les messages existants
+            ws.send(JSON.stringify({ type: "MESSAGES", data: messages}));
+        //   }
+        // });
         return;
       case "NEW_MESSAGE":
         // Add the message to the list of messages
